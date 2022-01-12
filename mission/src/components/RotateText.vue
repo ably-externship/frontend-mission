@@ -3,7 +3,7 @@
         <input v-model="inputText" type="text" data-test="text-input-customInput" maxlength="20"/>
         <button @click="rotate">text 회전</button>
         <button @click="checkCurrentyTextCount">Check</button>
-        <div v-if="this.inputText.length>=20">최대 20자 까지 입력 가능합니다.</div>
+        <!-- <div v-if="this.inputText.length>=20">최대 20자 까지 입력 가능합니다.</div> -->
         <div> {{inputText}}</div>
     </div>
 </template>
