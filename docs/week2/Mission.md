@@ -16,16 +16,19 @@
 
 ![](https://projectlion-vue.s3.ap-northeast-2.amazonaws.com/markdown-img/2-0-1.png)
 
-동기화한 main 브랜치에서 마지막 커밋 해쉬를 확인해주세요. 이 커밋 해쉬를 통해서 submission 브랜치로 템플릿 코드를 업데이트할 것입니다.
+main 브랜치에서 템플릿 코드의 커밋 해시는 03e08be입니다. 이 커밋 해쉬를 통해서 submission 브랜치로 템플릿 코드를 업데이트할 것입니다.
 
 ```bash
-# 예를 들어, 이미지에 표시된 commit hash가 aaaaaaa일 경우!
+# 먼저 동기화한 main 브랜치를 로컬로 가져와주세요
+git checkout main
+git pull origin main
 ## 이전에 작업한 개발 브랜치(예. develop) 삭제
-git branch -d develop # 주의!! 꼭 PR 머지 완료 후 
-## main 브랜치 싱크 후 submission 브랜치로 이동
+git branch -d develop # 주의!! 꼭 PR 머지 완료 후 삭제해주세요.
+## main 브랜치 싱크 후 submission 브랜치로 이동하고 1주차의 PR 커밋들도 로컬로 가져옵니다.
 git checkout submission
+git pull origin submission
 ## submission 브랜치에 cherry-pick을 이용해 2주차 템플릿 코드를 얹습니다
-git cherry-pick aaaaaaa
+git cherry-pick 03e08be
 ## 이후 나오는 창에서 커밋 메시지 저장 && submission 브랜치 변경사항 푸시
 git push origin submission
 ## 개발 브랜치(예. develop) 등으로 이동해 2주차 미션 수행
