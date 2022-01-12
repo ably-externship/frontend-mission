@@ -19,18 +19,18 @@ export default {
     return {
       inputText: this.defaultText,
       count: 0,
-    }
+    };
   },
 
   methods: {
     rotate() {
-      this.inputText = this.inputText.slice(1) + this.inputText.slice(0, 1)
-      this.count += 1
+      this.inputText = this.inputText.slice(1) + this.inputText.slice(0, 1);
+      this.count += 1;
     },
     checkCurrentyTextCount() {
       // eslint-disable-next-line no-alert
-      alert(`입력된 문자열:${this.inputText} 지금까지 클릭갯수:${this.count}`)
+      alert(`입력된 문자열:${this.inputText} 지금까지 클릭갯수:${this.count}`);
     },
   },
-}
+};
 </script>
