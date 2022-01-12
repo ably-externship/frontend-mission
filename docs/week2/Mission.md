@@ -14,8 +14,6 @@
 
 가장 먼저 upstream repository([ably-externship/frontend-mission](https://github.com/ably-externship/frontend-mission))와 sync를 맞추는 것이 필요합니다. 본인의 fork repository 웹 페이지로 들어가서 main 브랜치를 확인하면 "Fetch Upstream" 버튼이 나타난 것을 확인할 수 있습니다. Fetch upstream 버튼을 눌러서 main 브랜치를 동기화해주세요. (참고: [Syncing a fork](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork))
 
-![](https://projectlion-vue.s3.ap-northeast-2.amazonaws.com/markdown-img/2-0-1.png)
-
 main 브랜치에서 템플릿 코드의 커밋 해시는 03e08be입니다. 이 커밋 해쉬를 통해서 submission 브랜치로 템플릿 코드를 업데이트할 것입니다.
 
 ```bash
