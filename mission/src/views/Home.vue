@@ -8,13 +8,13 @@
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-import RotateText from '@/components/RotateText.vue'
+import HelloWorld from '@/components/HelloWorld.vue';
+import RotateText from '@/components/RotateText.vue';
 
 export default {
   name: 'Home',
   components: {
     HelloWorld, RotateText,
   },
-}
+};
 </script>
