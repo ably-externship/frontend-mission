@@ -7,7 +7,7 @@ export default {
   name: 'ItemInfoPage',
   data() {
     return {
-
+    
     }
   },
   methods: {
@@ -17,6 +17,7 @@ export default {
 
   },
 }
+
 </script>
 
 <style scoped>
