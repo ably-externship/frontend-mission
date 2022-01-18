@@ -15,7 +15,7 @@
 * [Syncing a fork](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork)에서 *Syncing a fork from the web UI* 방법을 사용하시는 것을 권장드립니다.
 * 본인의 fork repository 웹 페이지에서 **main 브랜치를 보고 있는 상태**에서 *Fetch and Merge* 해주세요.
 
-main 브랜치에서 템플릿 코드의 커밋 해시는 {{TBA}}입니다. 이 커밋 해쉬를 통해서 submission 브랜치로 템플릿 코드를 업데이트할 것입니다.
+main 브랜치에서 템플릿 코드의 커밋 해시는 eb7b911입니다. 이 커밋 해쉬를 통해서 submission 브랜치로 템플릿 코드를 업데이트할 것입니다.
 
 ```
 # 먼저 동기화한 main 브랜치를 로컬로 가져와주세요
@@ -27,7 +27,7 @@ git branch -d develop # 주의!! 꼭 PR 머지 완료 후 삭제해주세요.
 git checkout submission
 git pull origin submission
 ## submission 브랜치에 cherry-pick을 이용해 2주차 템플릿 코드를 얹습니다
-git cherry-pick {{TBA}}
+git cherry-pick eb7b911
 ## 이후 나오는 창에서 커밋 메시지 저장 && submission 브랜치 변경사항 푸시
 git push origin submission
 ## 개발 브랜치(예. develop) 등으로 이동해 2주차 미션 수행
