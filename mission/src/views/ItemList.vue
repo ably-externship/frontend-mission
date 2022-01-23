@@ -1,7 +1,7 @@
 <template>
   <div id="item-list-page">
     <div id="item-list-header">
-      <h1>Donguri_'s Shopping Mall</h1>
+      <h1>Dongurl's Shopping Mall</h1>
     </div>
     <Getitem />
     <footer>
