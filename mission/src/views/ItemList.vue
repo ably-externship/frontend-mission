@@ -43,13 +43,13 @@ export default {
 <style>
 
 footer {
-  position: absolute;
+  position: fixed;
   background-color: lightgray; /*임의색상*/
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 2rem;
   text-align: center;
+  width: 100%;
+  height: 2rem; /* footer의 높이 */
+  bottom: 0;
+  left: 0;
 }
 pre {
   margin-top:-23px;
