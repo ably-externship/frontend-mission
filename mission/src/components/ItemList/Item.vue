@@ -1,7 +1,7 @@
 <template>
   <div class="item-list-item">
-    <div id="item-container" v-for="(item,index) in items" v-bind:key="item.id">
-      <img :key="index +'r'" :src="item.image"/>
+    <div id="item-container" v-for="item in items" v-bind:key="item.id">
+      <img :src="item.image"/>
       <pre></pre>
       <span id="discount-percent"> {{ discountPercent }}</span>
       <span id="sale-price"> {{ displayPrice }}</span>
