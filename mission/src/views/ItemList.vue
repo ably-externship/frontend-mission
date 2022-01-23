@@ -3,6 +3,7 @@
     <div id="item-list-header">
       <h1>Donguri_'s Shopping Mall</h1>
     </div>
+    <Getitem />
     <footer>
       <div id="footer-block">
         <i class="bi bi-house-door"></i>
@@ -29,8 +30,13 @@
 </template>
 
 <script>
+import Getitem from '../components/ItemList/Item.vue';
+
 export default {
   name: 'ItemListPage',
+  components: {
+    Getitem,
+  },
 };
 </script>
 
