@@ -1,10 +1,5 @@
 <template>
   <router-view />
-  <footer>
-    <div id="rectangle">
-      200,000원 구매
-    </div>
-  </footer>
 </template>
 
 <style>

@@ -3,16 +3,59 @@
     <div class="container" data-test="product-name">
       {{ name }}
     </div>
-    <!-- v-html이란? html를 랜더링하기위한 것 따로 있음. data에서 html 가져오기 때문이지. -->
+    <div class="container" data-test="product-name">
+      {{ name }}
+    </div>
+    <div class="container" data-test="product-name">
+      <div data-test="product-price">{{ displayPrice }}</div>
+      <div data-test="original-price" v-if="isDiscounted">{{ displayOriginalPrice }}</div>
+    </div>
+     <!-- v-html이란? html를 랜더링하기위한 것 따로 있음. data에서 html 가져오기 때문이지. -->
     <div class="container">
       <html v-html="description" data-test="product-description">
       </html>
     </div>
+    <div class="container">
+      <div v-bind= "review in reviews" :keys="review.title">
+        <div data-test="review-description">
+          {{review.description}}
+        </div>
+      </div>
+    </div>
+    <div id="reviews">
+      <div
+          class="review w3-row"
+          v-for="review in reviews"
+          :key="review.review_no"
+          >
+          <div class="review-text">
+              <div class="review-row-1">
+                  <div class="review-writer" data-test="review-writer">
+                      {{ review.writer }}
+                  </div>
+                  <div class="review-created" data-test="review-created">
+                      {{ review.created }}
+                  </div>
+              </div>
+              <div class="review-title" data-test="review-title">
+                  {{ review.title }}
+              </div>
+              <div class="review-content" data-test="review-content">
+                  {{ review.content }}
+              </div>
+          </div>
+          <div
+              v-if="doesReviewImgExists(review)"
+              class="review-img"
+              data-test="review-img"
+              >
+              <img class="w3-right" :src="review.img" />
+        </div>
+      </div>
+    </div>
   </div>
 </template>
-
 <script>
-
 export default {
   name: 'ItemInfoPage',
   data() {
@@ -39,6 +82,15 @@ export default {
           created: '2021.12.03',
           img: 'http://img3.tmon.kr/cdn3/deals/2020/11/09/4636762258/4636762258_intro_je7JgHzEzp.jpg',
         },
+        {
+          review_no: 2,
+          writer: 'wkcc',
+          title: '좋아요',
+          content: '남편이 좋아해요! ',
+          like_count: 2,
+          created: '2021.01.23',
+          img: 'http://img3.tmon.kr/cdn3/deals/2020/11/09/4636762258/4636762258_intro_je7JgHzEzp.jpg',
+        },
       ],
     };
   },
@@ -46,65 +98,25 @@ export default {
 
   },
   computed: {
-
+    displayPrice() {
+      // 1000 단위로 콤마 표시해주는 함수이다. 이런것을 computed에다가 만들어야 한다.
+      return `${this.price.toLocaleString()}원`;
+    },
+    displayOriginalPrice() {
+      return Object.prototype.hasOwnProperty.call(this.$date, 'original_price')
+        ? `${this.original_price.toLocaleString()}원`
+        : undefined;
+    },
+    isDiscounted() {
+      // 데이터가 object이기 때문에 object에 키가 있다고 하는것을 보기위해서 사용한다.
+      // but eslint가 걸린다.
+      // this.$data.hasOwnProperty('original_price');
+      return Object.prototype.hasOwnProperty.call(this.$data, 'original_price');
+    },
   },
 };
 </script>
 
 <style scoped>
-.main-image, .wear-img {
-  width: 374px;
-  height: 374px;
-}
-.profile-box {
-  width: 50px;
-  height: 50px;
-  border-radius: 70%;
-  overflow: hidden;
-  margin-left: 20px;
-}
-.profile-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.product-name {
-  margin-top: -60px;
-  margin-left: -160px;
-  font-weight: bold;
-  font-size: 12px;
-}
-.product-tag {
-  margin-top: -10px;
-  margin-left: -160px;
-  font-weight: bold;
-  font-size: 10px;
-}
-.star-icon {
-  margin-top: -30px;
-  margin-right: -340px;
-}
-.product-info{
-  float: left;
-  margin-left: 10px
-}
-.product-sale{
-  margin-top: -10px;
-  margin-left: -130px;
-  color: red;
-}
-.sale-price{
-  margin-top: -38px;
-  margin-left: -10px;
-}
-.origin-price{
-  margin-top: -34px;
-  margin-right: -120px;
-  font-size: 10px;
-  text-decoration: line-through;
-  color: gray;
-}
-.product-content{
-  margin-left: -100px;
-}
+
 </style>
