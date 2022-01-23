@@ -11,6 +11,7 @@
 ## 제출 후 확인
 
 * [ ] 본인의 구현 결과를 `dev` 브랜치에 구현하고, `dev` 브랜치에서 `submission` 브랜치로 PR을 보내주세요.
-* [ ] Pull Request 생성 후 Reivewer에 @externship-master 와 @lkaybob 을 추가해주세요.
+
+CC: @externship-master  @lkaybob 
 
 

@@ -17,4 +17,4 @@ jobs:
         
       - name: Run ESLint
         working-directory: ./mission
-        run: eslint . --fix-dry-run --ext .js,.jsx,.ts,.tsx
+        run: yarn run lint . --ext .js,.jsx,.ts,.tsx
