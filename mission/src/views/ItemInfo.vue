@@ -1,42 +1,14 @@
 <template>
-<div id='item-info-page'>
-  <img class='main-image' src='../img/nike.jpeg'>
-  <div class="product-name>">
-    <p class="profile-box" style="background: #BDBDBD;">
-        <img class="profile-img" src="../img/profile.png">
-    </p>
-    <p class="product-name">
-      {{ productName }}
-    </p>
-    <p class="product-tag">
-      {{ productTag }}
-    </p>
-    <p class='star-icon'>
-      <img src='../img/star.svg'>
-    </p>
-    <hr>
+  <div id='item-info-page'>
+    <div class="container" data-test="product-name">
+      {{ name }}
+    </div>
+    <!-- v-html이란? html를 랜더링하기위한 것 따로 있음. data에서 html 가져오기 때문이지. -->
+    <div class="container">
+      <html v-html="description" data-test="product-description">
+      </html>
+    </div>
   </div>
-  <div class="product-info">
-    <h2> 나이키 콜라보 제품 </h2>
-    <p class='product-sale'>
-      {{ productSale }}
-    </p>
-    <p class='sale-price'>
-      {{ salePrice }}
-    </p>
-    <p class='origin-price'>
-      {{ originPrice }}
-    </p>
-  </div>
-  <div class='product-detail' style='margin-top: 100px'>
-    <h3 style='margin-left: -300px; font-size: 20px; color: gray'> 상품 정보 </h3>
-    <h3 style='margin-left:-250px; font-size: 10px'> {{ productTitle }} </h3>
-    <img class="wear-img" src="../img/nike_shoes_wear.jpeg">
-    <p class='product-content'>
-      {{ productContent }}
-    </p>
-  </div>
-</div>
 </template>
 
 <script>
@@ -45,13 +17,29 @@ export default {
   name: 'ItemInfoPage',
   data() {
     return {
-      productName: 'AirMax 405',
-      productTag: '#나이키  #신발',
-      productSale: '34%',
-      salePrice: '200,000원',
-      originPrice: '500,000원',
-      productTitle: '남녀 모두 잘 어울리는 스피드 슈즈',
-      productContent: '당신의 러닝을 책임질수 있는 슈즈 판매합니다.',
+      product_no: 1,
+      name: '신발러닝 업그레이드 나이키',
+      image: 'https://www.google.com/url?sa=i&url=http%3A%2F%2Fwww.tmon.co.kr%2Fdeal%2F4636762258&psig=AOvVaw1cQkulhKK9CmZnZmU3igG1&ust=1642997733582000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCMjwltSBx_UCFQAAAAAdAAAAABAF',
+      price: 198000,
+      original_price: 300000,
+      description: '<div><p><strong>남녀 모두 잘 어울리는 스피드 슈즈<strong><p><img style="width: 100%" src="http://img3.tmon.kr/cdn3/deals/2020/11/09/4636762258/4636762258_intro_je7JgHzEzp.jpg"/><p>연말 송년회에 아주 어울릴 신발 판매 합니다.</p></div>',
+      seller: {
+        seller_no: 1,
+        name: '대한 슈즈',
+        hash_tags: ['남성', '신발'],
+        profile_image: 'http://image.auction.co.kr/itemimage/1c/63/7c/1c637c5096.jpg',
+      },
+      reviews: [
+        {
+          review_no: 1,
+          writer: 'ddce',
+          title: '굿굿',
+          content: '신발이 아주 편해요 만족!',
+          like_count: 21,
+          created: '2021.12.03',
+          img: 'http://img3.tmon.kr/cdn3/deals/2020/11/09/4636762258/4636762258_intro_je7JgHzEzp.jpg',
+        },
+      ],
     };
   },
   methods: {
