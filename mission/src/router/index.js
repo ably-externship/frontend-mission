@@ -18,7 +18,7 @@ const routes = [
     component: ItemInfoPage,
   },
   {
-    path: '/Item',
+    path: '/Item/:ItemIds',
     name: 'Item',
     component: ItemInfoPage,
   },

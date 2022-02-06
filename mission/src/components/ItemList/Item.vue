@@ -1,5 +1,6 @@
 <template>
-  <div class="item-list-item w3-container" @click="$router.push({name:'Item'})">
+  <div class="item-list-item w3-container" @click="$router.push({ name:'Item',
+    params: { ItemIds: ItemId }})">
     <div class="w3-panel">
       <img class="w3-round-large" :src="img" />
     </div>
@@ -26,7 +27,7 @@
 export default {
   name: 'ItemListItem',
   props: {
-    ItemId: { type: Number, default: 0 },
+    ItemId: { type: Number, default: 1 },
     name: { type: String, default: '' },
     price: { type: Number, default: 0 },
     img: {
@@ -47,9 +48,6 @@ export default {
     displayDiscountRate() {
       const rate = ((this.original_price - this.price) / this.original_price) * 100;
       return `${rate.toFixed(0)}%`;
-    },
-    ItemIdText() {
-      return this.$route.params.ItemIds;
     },
   },
 };
