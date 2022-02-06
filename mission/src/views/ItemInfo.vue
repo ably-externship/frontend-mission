@@ -98,36 +98,37 @@ export default {
   data() {
     return {
       product_no: 1,
-      name: '핏이 좋은 수트',
-      image: 'https://projectlion-vue.s3.ap-northeast-2.amazonaws.com/items/suit-1.png',
-      price: 198000,
-      original_price: 298000,
-      description: `<div><p><strong>체형에 관계없이 누구에게나 맞는 수트!</strong></p>
-      <img style="width: 100%;" src="https://projectlion-vue.s3.ap-northeast-2.amazonaws.com/items/suit-2.png"/>
-      <p>연말 송년회에 아주 어울릴 수트 판매합니다!</p></div>`,
+      name: 'airmag Sneakers',
+      image: 'https://cdn-images.farfetch-contents.com/14/16/46/74/14164674_21073031_600.jpg',
+      price: 230400,
+      original_price: 300000,
+      description: `<div><p><strong>nike's new collaboration</strong></p>
+      <img style="width: 100%;" src="https://i.ytimg.com/vi/NimGxU4Qnhk/maxresdefault.jpg"/>
+      <img style="width: 100%;" src="https://footwearnews.com/wp-content/uploads/2017/10/nike-mag-heritage-auctions7.jpg?w=700&h=437&crop=1"/>
+      <p>미래 지향적 디자인이 녹여든 나이키 에어 맥 신발과 함께 해요!</p></div>`,
       seller: {
         seller_no: 1,
-        name: '대한양복',
-        hash_tags: ['남성', '수트'],
-        profile_image: 'https://projectlion-vue.s3.ap-northeast-2.amazonaws.com/sellers/seller.png',
+        name: '나이키 운동화',
+        hash_tags: ['남성', '운동화'],
+        profile_image: 'https://www.diethelmtravel.com/wp-content/uploads/2016/04/bill-gates-wealthiest-person.jpg',
       },
       reviews: [
         {
           review_no: 1,
-          writer: 'lk***',
+          writer: 'ekco***',
           title: '만족해요',
-          content: '핏이 아주 잘 맞습니다. 대만족!',
-          likes_count: 7,
-          created: '2021. 12. 04',
-          img: 'https://projectlion-vue.s3.ap-northeast-2.amazonaws.com/items/example.jpg',
+          content: '미래 지향적 디자인이군요 ',
+          likes_count: 20,
+          created: '2022. 02. 04',
+          img: 'https://i.pinimg.com/474x/b6/93/bb/b693bb579d40e57f0cd98e7349869e3c--futuristic-shoes-marty-mcfly.jpg',
         },
         {
           review_no: 1,
           writer: 'll***',
-          title: '만족해요2',
+          title: '무한 만족',
           content: '배송도 빠르고 만족합니다.',
-          likes_count: 5,
-          created: '2021. 12. 05',
+          likes_count: 14,
+          created: '2021. 12. 25',
         },
       ],
     };
@@ -169,7 +170,7 @@ export default {
 }
 
 .seller-panel {
-  padding-top: 10px;
+  padding-top: 142px;
   padding-bottom: 10px;
   display: flex;
   align-items: center;

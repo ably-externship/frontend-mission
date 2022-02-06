@@ -29,61 +29,11 @@ export default {
     return {
       items: [
         {
-          name: 'product 1',
-          price: 13400,
-          original_price: 15000,
-          description: 'description 1',
-        },
-        {
-          name: 'product 2',
-          price: 13400,
-          description: 'description 1',
-        },
-        {
-          name: 'product 2',
-          price: 13400,
-          description: 'description 1',
-        },
-        {
-          name: 'product 2',
-          price: 13400,
-          description: 'description 1',
-        },
-
-        {
-          name: 'product 2',
-          price: 13400,
-          description: 'description 1',
-        },
-
-        {
-          name: 'product 2',
-          price: 13400,
-          description: 'description 1',
-        },
-
-        {
-          name: 'product 2',
-          price: 13400,
-          description: 'description 1',
-        },
-
-        {
-          name: 'product 2',
-          price: 13400,
-          description: 'description 1',
-        },
-
-        {
-          name: 'product 2',
-          price: 13400,
-          description: 'description 1',
-        },
-
-        {
-          name: 'product 2',
-          price: 13400,
-          description: 'description 1',
+          ItemId: 1,
+          name: 'airmag Sneakers',
+          price: 230400,
+          original_price: 300000,
+          description: "nike's new collaboration",
         },
       ],
     };

@@ -1,5 +1,5 @@
 <template>
-  <div class="item-list-item w3-container">
+  <div class="item-list-item w3-container" @click="$router.push({name:'Item'})">
     <div class="w3-panel">
       <img class="w3-round-large" :src="img" />
     </div>
@@ -26,11 +26,12 @@
 export default {
   name: 'ItemListItem',
   props: {
+    ItemId: { type: Number, default: 0 },
     name: { type: String, default: '' },
     price: { type: Number, default: 0 },
     img: {
       type: String,
-      default: 'https://projectlion-vue.s3.ap-northeast-2.amazonaws.com/items/suit-1.png',
+      default: 'https://cdn-images.farfetch-contents.com/14/16/46/74/14164674_21073031_600.jpg',
     },
     original_price: { type: Number, default: -1 },
     description: { type: String, default: '' },
@@ -46,6 +47,9 @@ export default {
     displayDiscountRate() {
       const rate = ((this.original_price - this.price) / this.original_price) * 100;
       return `${rate.toFixed(0)}%`;
+    },
+    ItemIdText() {
+      return this.$route.params.ItemIds;
     },
   },
 };
