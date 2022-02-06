@@ -158,6 +158,7 @@ export default {
   padding-top: 100%;
   background-color: gray;
 }
+
 .image-placeholder {
   width: 100%;
   position: absolute;
@@ -166,6 +167,7 @@ export default {
   bottom: 0;
   right: 0;
 }
+
 .seller-panel {
   padding-top: 10px;
   padding-bottom: 10px;
@@ -174,15 +176,18 @@ export default {
   border-top: 1px solid gainsboro;
   border-bottom: 1px solid gainsboro;
 }
+
 .seller-image {
   height: 50px;
   width: 50px;
   border: 1px solid black;
   margin-right: 10px;
 }
+
 .seller-info {
   margin-right: auto;
 }
+
 .price-container {
   display: flex;
   align-items: center;
@@ -191,44 +196,55 @@ export default {
   padding-right: 10px;
   font-size: 22px;
 }
+
 #discount {
   color: red;
 }
+
 #original {
   color: gray;
 }
+
 .tag-container > div {
   margin-right: 10px;
 }
+
 .review {
   display: flex;
   border-bottom: 2px solid lightslategray;
   margin-bottom: 10px;
   padding-bottom: 10px;
 }
+
 .review-row-1 {
   display: flex;
 }
+
 .review-text {
   margin-right: auto;
 }
+
 .review-img > img {
   height: 100px;
 }
+
 .review-writer {
   font-size: large;
   font-weight: bold;
   color: rgb(116, 116, 116);
 }
+
 .review-created {
   font-size: small;
   margin-left: 10px;
   color: rgb(116, 116, 116);
 }
+
 .review-title {
   font-size: large;
   font-weight: bold;
 }
+
 #footer {
   position: fixed;
   width: 100%;
@@ -244,6 +260,7 @@ export default {
   align-items: center;
   justify-content: center;
 }
+
 #btn-pruchase {
   background-color: black;
   color: white;
@@ -251,6 +268,7 @@ export default {
   padding: 5px 15px;
   box-shadow: 2px 2px 2px gray;
 }
+
 #item-info-page {
   padding-bottom: 60px;
 }

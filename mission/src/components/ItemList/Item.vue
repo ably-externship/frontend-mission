@@ -1,111 +1,84 @@
 <template>
-  <div class="item-list-item">
-    <div id="item-container" v-for="item in items" v-bind:key="item.id">
-      <img :src="item.image"/>
-      <pre></pre>
-      <span id="discount-percent"> {{ discountPercent }}</span>
-      <span id="sale-price"> {{ displayPrice }}</span>
-      <span v-if="isDiscounted" >{{ displayOriginalPrice }}</span>
-      <br>
-      <span id="item-name">{{ item.name }}</span>
-      <br>
-      <span id="item-description" >{{ item.description }}</span>
+  <div class="item-list-item w3-container">
+    <div class="w3-panel">
+      <img class="w3-round-large" :src="img" />
+    </div>
+    <div class="w3-container price-container">
+      <div
+        v-if="isDiscounted"
+        class="w3-left discount"
+        data-test="discount-rate"
+      >
+        {{ displayDiscountRate }}
+      </div>
+      <div class="w3-left price" data-test="price">
+        {{ priceWithComma }}
+      </div>
+    </div>
+    <div class="w3-container w3-left info-container">
+      <div class="info-name" data-test="name">{{ name }}</div>
+      <div data-test="description">{{ description }}</div>
     </div>
   </div>
 </template>
-<script>
 
+<script>
 export default {
   name: 'ItemListItem',
-  data() {
-    return {
-      items: [
-        {
-          id: 0,
-          name: '구찌',
-          image: 'http://img.danawa.com/prod_img/500000/963/824/img/4824963_1.jpg?shrink=330:330&_v=20200227122724',
-          price: 102020,
-          original_price: 203020,
-          description: '캐주얼 명품 브랜드',
-        },
-        {
-          id: 1,
-          name: 'XD 200',
-          image: 'https://ae01.alicdn.com/kf/HTB1YENYbsfrK1Rjy1Xdq6yemFXal/Fashion-Male-Running-Shoes-triple-S-Sneakers-Balancia-Rriumph-Street-DAD-Chunky-Shoes-Dope-Casual-GYM.jpg_640x640.jpg',
-          price: 10020,
-          original_price: 532020,
-          description: '나이키의 새로운 신상화',
-        },
-        {
-          id: 2,
-          name: '나이키',
-          image: 'https://image.msscdn.net/images/goods_img/20200224/1320009/1320009_1_500.jpg',
-          price: 11000,
-          original_price: 12000,
-          description: '강한 러닝을 할 수 있는 슈즈',
-        },
-        {
-          id: 3,
-          name: '아디다스',
-          image: 'https://image.msscdn.net/images/goods_img/20190122/937707/937707_1_500.jpg',
-          price: 1021020,
-          original_price: 2020220,
-          description: '엄청난 등산화 ',
-        },
-        {
-          id: 4,
-          name: '언더아머',
-          image: 'http://img.danawa.com/prod_img/500000/906/675/img/7675906_1.jpg?shrink=330:330&_v=20201006131932',
-          price: 1020210,
-          original_price: 2022020,
-          description: '높이뛰기를 도와주는 ',
-        },
-        {
-          id: 5,
-          name: '슈프림',
-          image: 'http://img4.tmon.kr/cdn4/deals/2021/12/09/9352182394/9352182394_front_11cc918692.jpg',
-          price: 1020320,
-          original_price: 4122020,
-          description: '캐주얼하고 모든 분위기에 어울리는',
-        },
-      ],
-    };
+  props: {
+    name: { type: String, default: '' },
+    price: { type: Number, default: 0 },
+    img: {
+      type: String,
+      default: 'https://projectlion-vue.s3.ap-northeast-2.amazonaws.com/items/suit-1.png',
+    },
+    original_price: { type: Number, default: -1 },
+    description: { type: String, default: '' },
+    discount_rate: { type: Number, default: null },
   },
   computed: {
-    displayPrice() {
-      return `${this.items[0].price.toLocaleString()}원`;
-    },
-    displayOriginalPrice() {
-      return Object.prototype.hasOwnProperty.call(this.$date, 'original_price')
-        ? `${this.items[0].original_price.toLocaleString()}원`
-        : undefined;
+    priceWithComma() {
+      return `${this.price.toLocaleString()}원`;
     },
     isDiscounted() {
-      return Object.prototype.hasOwnProperty.call(this.$data, 'original_price');
+      return this.original_price !== -1;
     },
-    discountPercent() {
-      return `${Math.round(100 - (((this.items[0].price) * 100) / ((this.items[0].original_price))))}%`;
+    displayDiscountRate() {
+      const rate = ((this.original_price - this.price) / this.original_price) * 100;
+      return `${rate.toFixed(0)}%`;
     },
   },
 };
 </script>
 
-<style>
+<style scoped>
+div.price-container > p {
+  display: inline;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 img {
-  width: 200px;
-  height: 200px;
+  /* TODO img 사이즈 고정 필요? (온기에서 했던 것대로 하면 될 것 같은데 */
+  border: 1px solid black;
+  width: 100%;
 }
-pre {
-  margin-top:-23px;
-}
-#item-container {
-  display: inline-block;
-}
-#discount-percent {
+
+.discount {
+  padding-right: 5px;
   color: red;
-  margin-right: 10px;
+  font-weight: bold;
 }
-#item-description {
-  color: lightgray;
+
+.price {
+  font-weight: bold;
+}
+
+.info-container {
+  color: gray;
+}
+
+.info-container > .info-name {
+  font-weight: bold;
 }
 </style>

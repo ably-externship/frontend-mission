@@ -1,65 +1,98 @@
 <template>
-  <div id="item-list-page">
-    <div id="item-list-header">
-      <h1>Dongurl's Shopping Mall</h1>
+  <ItemListHeader class="item-list-header" />
+  <main>
+    <div class="w3-row item-list-main" data-test="item-list-page">
+      <ItemListItem
+        v-for="item in items"
+        :name="item.name"
+        :description="item.description"
+        :price="item.price"
+        :original_price="item.original_price"
+        :key="item.name"
+        class="w3-col s6"
+        data-test="item"
+      ></ItemListItem>
     </div>
-    <Getitem />
-    <footer>
-      <div id="footer-block">
-        <i class="bi bi-house-door"></i>
-        <pre></pre>
-        <span id= "footer-icon-font">홈</span>
-      </div>
-      <div id="footer-block">
-        <i class="bi bi-heart"></i>
-        <pre></pre>
-        <span id= "footer-icon-font">찜</span>
-      </div>
-      <div id="footer-block">
-        <i class="bi bi-cart"></i>
-        <pre></pre>
-        <span id= "footer-icon-font">장바구니</span>
-      </div>
-      <div id="footer-block">
-        <i class="bi bi-person"></i>
-        <pre></pre>
-        <span id= "footer-icon-font">마이페이지</span>
-      </div>
-    </footer>
-  </div>
+  </main>
+  <ItemListNav />
 </template>
 
 <script>
-import Getitem from '../components/ItemList/Item.vue';
+import ItemListItem from '@/components/ItemList/Item.vue';
+import ItemListHeader from '@/components/ItemList/Header.vue';
+import ItemListNav from '@/components/ItemList/Nav.vue';
 
 export default {
+  components: { ItemListItem, ItemListHeader, ItemListNav },
   name: 'ItemListPage',
-  components: {
-    Getitem,
+  data() {
+    return {
+      items: [
+        {
+          name: 'product 1',
+          price: 13400,
+          original_price: 15000,
+          description: 'description 1',
+        },
+        {
+          name: 'product 2',
+          price: 13400,
+          description: 'description 1',
+        },
+        {
+          name: 'product 2',
+          price: 13400,
+          description: 'description 1',
+        },
+        {
+          name: 'product 2',
+          price: 13400,
+          description: 'description 1',
+        },
+
+        {
+          name: 'product 2',
+          price: 13400,
+          description: 'description 1',
+        },
+
+        {
+          name: 'product 2',
+          price: 13400,
+          description: 'description 1',
+        },
+
+        {
+          name: 'product 2',
+          price: 13400,
+          description: 'description 1',
+        },
+
+        {
+          name: 'product 2',
+          price: 13400,
+          description: 'description 1',
+        },
+
+        {
+          name: 'product 2',
+          price: 13400,
+          description: 'description 1',
+        },
+
+        {
+          name: 'product 2',
+          price: 13400,
+          description: 'description 1',
+        },
+      ],
+    };
   },
 };
 </script>
 
 <style>
-
-footer {
-  position: fixed;
-  background-color: lightgray; /*임의색상*/
-  text-align: center;
-  width: 100%;
-  height: 2rem; /* footer의 높이 */
-  bottom: 0;
-  left: 0;
-}
-pre {
-  margin-top:-23px;
-}
-#footer-icon-font{
-  font-size: 10px;
-}
-#footer-block{
-  display:inline-block;
-  margin-right: 35px;
-  margin-left: 35px;
+.item-list-main {
+  padding-bottom: 60px;
 }
 </style>
